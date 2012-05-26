@@ -1,0 +1,185 @@
+/* 
+    Document   : main
+    Created on : May 3, 2012, 9:46:43 AM
+    Author     : ADMIN
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+/*
+   general properties
+*/
+body {
+    /*    width: 1342px;
+        height: 800px;
+        background-image: url(../img/fruit-bg.png);
+        position: absolute;*/
+    width: 1342px;
+    height: 650px;
+    background-image: url(../img/bg.jpg);
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+}
+.header{
+    
+}
+.content{
+    width: 1000px;
+    background-color: transparent;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.intro-img {
+    /*    background-image: url(../img/1_pizza_bo.png);*/
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    position: absolute;
+}
+/*.menu-items{
+    width: 25%;
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    right: -40px;
+    top: 22px;
+}*/
+.cake-intro{
+    width: 820px;
+    position: relative;
+    TOP: 22PX;
+    left: -131px;
+}
+.logo-img{
+/*    width: 234px;
+    top: -14px;
+    position: relative;*/
+    width: 234px;
+    top: 47px;
+    position: relative;
+    left: 110px;
+}
+/*
+   Menu and menu item theme 1
+*/
+/*.items{
+    position: relative;
+    overflow: visible;
+    top: -35px;
+}*/
+/*
+.item{
+    display: block;
+    border: 1px solid gray;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 13px;
+    padding-top: 7px;
+    line-height: 28px;
+    width: 120px;
+}*/
+.home-btn{
+    margin-left: 126px;
+    margin-bottom: 20px;
+}
+.order-btn{
+    margin-left: 160px;
+    margin-bottom: 20px;
+}
+.facebook-btn{
+    margin-left: 140px;
+    margin-bottom: 20px;
+}
+.pizza-family-btn{
+    margin-left: 85px;
+    margin-top: 43px;
+    margin-bottom: 20px;
+}
+.about-us-btn{
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+.contact-btn{
+    margin-left: 12px;
+    margin-bottom: 20px;
+}
+.slogan-btn{
+    width: 211px;
+    border: 0px;
+}
+
+/*
+  Menu and item theme 2 
+  cirle theme
+*/
+
+.menu-items {
+    width: 25%;
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    right: -40px;
+    top: 22px;
+}
+.item {
+    display: block;
+    border: 1px solid gray;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 90px;
+    padding-top: 5px;
+    line-height: 23px;
+    width: 120px;
+    height: 27px;
+    height: 52px;
+    border-radius: 55px;
+    padding-top: 29px;
+    width: 81px;
+}
+
+.items {
+position: relative;
+overflow: visible;
+top: -224px;
+left: -198px;
+}
+.home-btn {
+margin-left: 138px;
+margin-bottom: 20px;
+margin-top: -19px !important;
+}
+.order-btn {
+margin-left: 184px;
+margin-bottom: 20px;
+}
+.facebook-btn {
+margin-left: 169px;
+margin-bottom: 20px;
+}
+.about-us-btn {
+margin-left: 120px;
+margin-bottom: 20px;
+}
+.pizza-family-btn {
+margin-left: 64px;
+margin-top: 43px;
+margin-bottom: 20px;
+}
+.img-sologan{
+    width: 272px;
+    position: relative;
+    top: -31px;
+    left: 28px;
+}
+.wrapper-slogan{
+    position: absolute;
+    left: -97px;
+    width: 300px;
+}
