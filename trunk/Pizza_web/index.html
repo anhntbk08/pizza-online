@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Home page Pizza Family - pizza cho mọi nhà</title>
+
+        <link href="css/home.css"  rel="stylesheet" type="text/css"/>
+        <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+        <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+        <script src="js/jquery.hoverdir.js" type="text/javascript"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+        <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            var currentBox;
+			var currentType = "";
+            $(function() {
+                $(".gallery a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:10000, hideflash: true});
+                $('#da-thumbs > li').hoverdir();
+				
+                function enableTranformZoom(id,initScale,centerX,centerY){
+                    $('#'+id).css('-webkit-transform','scale('+initScale+')');
+                    $('#'+id).css('-moz-transform', 'scale('+initScale+')');
+
+                    $('#'+id).css('-moz-transform-origin',centerX+'% ' + centerY+ '%');
+                    $('#'+id).css('-webkit-transform-origin', centerX+'% ' + centerY+ '%');
+                } 
+
+                function zoomAnimation(id,scale,time,timeFunc){
+                    $('#'+id).css('-webkit-transition',time + 's ' + timeFunc);
+                    $('#'+id).css('-moz-transition', time + 's ' + timeFunc);
+
+                    $('#'+id).css('-webkit-transform','scale('+scale+')');
+                    $('#'+id).css('-moz-transform','scale('+scale+')');
+                }
+                $("li").bind("hover" , function(){
+                    document.getElementById("player").play();
+                });
+				
+                $('#dialog').dialog({
+                    autoOpen: false,
+                    width: 600,
+                    buttons: {
+                        "Ok": function() {
+							console.log("currentBox ",currentBox);
+							
+								currentBox.css("color",$("#dialog input").val());
+							
+                            
+                            $(this).dialog("close");
+                        },
+                        "Cancel": function() {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+				
+                // Dialog
+				/*
+                $(".content li").bind("click", function(){
+                    currentBox = $(this);
+                    
+					currentType = "li";
+                    $('#dialog input').val("");
+                    $('#dialog').dialog("open");
+                });
+				*/
+				
+				/*
+				$(".introduce-text-title , .introduce-text-content , .price-text-left , .price-text-right").bind("click", function(){
+                    currentBox = $(this);
+                    console.log(currentBox);
+					currentType = "span";
+                    $('#dialog input').val("");
+                    $('#dialog').dialog("open");
+                });
+				*/
+            });
+        </script>
+    </head>
+    <body>
+        <audio id="player">
+            <source src="sound/sound36.mp3" type="audio/mp3" />
+        </audio>
+        <div id="dialog" title="Chọn màu">
+            <p>Nhập vào màu bạn muốn chọn cho ô này</p>
+            <input type="text" class="dialog-input"/>
+        </div>
+        <div class="wrapper-content">
+            <div class ="header">
+                <div class="page-title">
+                    <div class="wrapper-slogan">
+                        <!--
+                        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="1057" height="561" id="flash6" align="middle">
+                            <param name="allowScriptAccess" value="sameDomain" />
+                            <param name="movie" value="img/flash6.swf" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><param name="bgcolor" value="#ffffff" /><embed src="img/flash6.swf" quality="high" wmode="transparent" bgcolor="#ffffff" width="310" height="150" name="flash6" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                        </object>
+                        -->
+                        <img src="img/pfd.png" class="img-logo"/>
+                        <img src="img/slogan.png" class="img-sologan"/>
+                    </div>
+                    <div class="phone-number-bar">
+                        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="1057" height="561" id="flash6" align="middle">
+                            <param name="allowScriptAccess" value="sameDomain" />
+                            <param name="movie" value="img/flash6.swf" /><param name="quality" value="high" /><param name="wmode" value="transparent" /><param name="bgcolor" value="#ffffff" /><embed src="img/sdt12.swf" quality="high" wmode="transparent" bgcolor="#ffffff" width="472" height="213" name="flash6" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                        </object>
+                    </div>
+                    <div class="slogan-2">
+                        <img src="img/giaohang.png" class="img-sologan2"/>
+                    </div>
+                </div>
+                <div id="nav">
+                    <ul id="menu1">
+                        <li>
+                            <a href="#" class="first">Home</a>
+
+                        </li>
+                        <li>
+                            <a href="#">Menu</a>
+
+                        </li>
+                        <li>
+                            <a href="#">Facebook</a>
+
+                        </li>
+                        <li>
+                            <a href="#">About us</a>
+
+                        </li>
+                        <li>
+                            <a href="#">Contact us</a>
+
+                        </li>
+                    </ul>
+                </div>	
+            </div>
+            <div class ="content">
+                <div class="menu-dishes menu-dishes-left ">
+                    <ul id = "da-thumbs" class="dishes dishes-left da-thumbs gallery clearfix">
+                        <li class="red-bg first-li-left width-30-percent">
+                            
+							<a href="img/1_bolognaise.png?lol=lol" rel="prettyPhoto" style="width:100%; height: 100%; z-index:1">
+                             </a>       
+                            <span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Bolognaise </span> <br/>
+                                <span class="introduce-text-content" style="color:red;">
+                                    Sốt thịt bò kiểu ý, ngô ớt xanh ,hành tây, phomai
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                    <span class="price-text-left" style="color:blue;"> Regular </span> <span class="price-text-right" style="color:blue;"> 99.000</span><br/>
+                                    <span class="price-text-left" style="color:blue;"> Large </span> <span class="price-text-right" style="color:blue;"> 139.000</span>
+                                </span>
+                            </span>
+
+                        </li>
+                        <li class="blue-bg second-li-left width-30-percent">
+                            <span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Seafood </span> <br/>
+                                <span class="introduce-text-content" style="top: -24px;color:violet;">
+                                    Tôm ,ớt Đà Lạt ,dứa ,phomai
+                                </span><br/>
+                                <span class="introduce-text-price" style="color:green;">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="green-bg third-li-left width-30-percent padding-right-12">
+                            <span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Chicken </span> <br/>
+                                <span class="introduce-text-content" style="top: -24px;color:blue;">
+                                    Thịt gà ,nấm hương ,dứa và phomai
+                                </span><br/>
+                                <span class="introduce-text-price" style="color:violet;">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="gray-bg four-li-left margin5 width-50-percent">
+                            <span class="introduce-text-long" style="z-index :0;">
+                                <span class="introduce-text-title">Pepperoni </span> <br/>
+                                <span class="introduce-text-content" style="top: -19px;color:blue;">
+                                    Xúc xích ,dứa ,oliu đen và phomai
+                                </span><br/>
+                                <span class="introduce-text-price-long" style="color:green;">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="green1-bg five-li-left margin5 width-50-percent">
+                           <span class="introduce-text-long" style="z-index :0;">
+                                <span class="introduce-text-title">Hawaiian </span> <br/>
+                                <span class="introduce-text-content" style="top: -27px;color:#7c07A9">
+                                    Thịt giăm bông ,ớt, oliu đen và phomai
+                                </span><br/>
+                                <span class="introduce-text-price-long" style="color:blue;">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="green2-bg six-li-left margin5 width-30-percent">
+                           <span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Carbonara </span> <br/>
+                                <span class="introduce-text-content" style="top: -24px;color:red;">
+                                    Thịt xông khói ,dứa, oliu đen ,phomai
+                                </span><br/>
+                                <span class="introduce-text-price" style="color:green;">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="green3-bg seven-li-left margin5 width-30-percent">
+                           <span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Fresh fruit </span> <br/>
+                                <span class="introduce-text-content" style="top: -24px;color:orange;">
+                                    Các loại hoa quả ,phomai
+                                </span><br/>
+                                <span class="introduce-text-price" style="color:violet;">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="red-bg eight-li-left margin5 width-30-percent padding-right-12">
+                           <span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Veggie </span> <br/>
+                                <span class="introduce-text-content" style="top: -24px;color:#50026E">
+                                    Các loại nấm ,rau ,oliu đen ,nhiều phomai
+                                </span><br/>
+                                <span class="introduce-text-price" style="color:blue;">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="gray-bg nine-li-left margin5 width-50-percent">
+                           <span class="introduce-text-long" style="z-index :0;">
+                                <span class="introduce-text-title">Special</span> <br/>
+                                <span class="introduce-text-content" style="top: -24px;color:blue">
+                                    Thịt dăm bông ,xúc xích ,thịt bò ,ớt và phomai
+                                </span><br/>
+                                <span class="introduce-text-price-long" style="color:#70689A;">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                        <li class="green-bg ten-li-left margin5 width-50-percent">
+                          <span class="introduce-text-long" style="z-index :0;">
+                                <span class="introduce-text-title">Super supreme </span> <br/>
+                                <span class="introduce-text-content" style="top: -24px;">
+                                    Tôm ,thịt xông khói ,nấm ,dứa và phomai
+                                </span><br/>
+                                <span class="introduce-text-price-long">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 99.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 139.000</span>
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="menu-dishes menu-dishes-right">
+                    <ul class="dishes dishes-right">
+                        <li class="red-bg " style ="margin-left: 5px;background:#9303A7;">
+							<span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Bolognaise </span> <br/>
+                                <span class="introduce-text-content" style="top: -15px;">
+                                    Mỳ ý với sốt thịt bò
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 59.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 89.000</span>
+                                </span>
+                            </span>
+						</li>
+                        <li class="blue-bg " style ="margin-left: 6px;background:#D60062;">
+						<span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Seafood </span> <br/>
+                                <span class="introduce-text-content" style="top: -15px;">
+                                    Mỳ ý với hải sản tươi
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 59.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 89.000</span>
+                                </span>
+                            </span>
+						</li>
+                        <li class="green-bg  margin5" style="background:#007536;">
+						<span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Chicken </span> <br/>
+                                <span class="introduce-text-content" style="top: -15px;">
+                                    Mỳ ý với thịt gà, nấm
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                  <span class="price-text-left"> Regular </span> <span class="price-text-right"> 59.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 89.000</span>
+                                </span>
+                            </span>
+						</li>
+                        <li class="green1-bg  margin5 height-280" style="background:#009B95;">
+							<span class="introduce-text content-170" style="z-index :0;">
+                                <span class="introduce-text-title top-0">Hawaiin </span> <br/>
+                                <span class="introduce-text-content top-0">
+                                    Mỳ ý giăm bông ,xúc xích
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                  <span class="price-text-left"> Regular </span> <span class="price-text-right"> 59.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 89.000</span>
+                                </span>
+                            </span>
+						</li>
+                        <li class="green2-bg  margin5 height-280" style="margin-top: -96px;background: #138900;padding-top: 11px;">
+							<span class="introduce-text content-170" style="z-index :0;">
+                                <span class="introduce-text-title top-0">Salad </span> <br/>
+                                <span class="introduce-text-content top-0">
+                                    Xà lách ,cà chua ,dưa chuột ,hành tây ,ngô ngọt trộn sốt Cream
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 19.000</span><br/>
+                                    
+                                </span>
+                            </span>
+						</li>
+                        <li class="green3-bg  margin5 " style="margin-top: 8px;background:#0ACF00;">
+							<span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title ">Special </span> <br/>
+                                <span class="introduce-text-content" style="top: -27px;">
+                                    Mỳ ý tôm ,thịt gà, xúc xích
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 59.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 89.000</span>
+                                </span>
+                            </span>
+						</li>
+                        <li class="gray-bg  margin5" style="background:#00AF64;clear:both;">
+							<span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Carbonara </span> <br/>
+                                <span class="introduce-text-content" style="top: -15px;">
+                                    Mỳ ý thịt xông khói
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                   <span class="price-text-left"> Regular </span> <span class="price-text-right"> 59.000</span><br/>
+                                    <span class="price-text-left"> Large </span> <span class="price-text-right"> 89.000</span>
+                                </span>
+                            </span>
+						</li>
+                        <li class="blue-bg  margin5" style="background:#580EAD !important;">
+							<span class="introduce-text" style="z-index :0;">
+                                <span class="introduce-text-title">Đồ uống </span> <br/>
+                                <span class="introduce-text-content" style="top: -15px;">
+                                    Pepsi ,coca , cam ép
+                                </span><br/>
+                                <span class="introduce-text-price">
+                                    <span class="price-text-left"> Regular </span> <span class="price-text-right"> 9.000</span><br/>
+                                    
+                                </span>
+                            </span>
+						</li>
+
+                    </ul>
+                </div>    
+                 
+            </div>
+            
+        </div>    
+
+        
+    </body>
+</html>
